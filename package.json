@@ -5,7 +5,8 @@
   "license": "none",
   "type": "module",
   "scripts": {
-    "start": "vite --mode development",
+    "start": "tauri dev",
+    "dev": "vite --mode development",
     "test": "vitest watch",
     "format": "eslint --config eslint.config.js --fix . && prettier --config .prettierrc.mjs --write .",
     "build": "vite build"
