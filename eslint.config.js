@@ -15,7 +15,7 @@ export default [
   eslintConfigPrettier,
   {
     ignores: ['.yarn/'],
-    files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.spec.ts', 'src/**/*.spec.tsx'],
+    files: ['src-js/**/*.ts', 'src-js/**/*.tsx', 'src-js/**/*.spec.ts', 'src-js/**/*.spec.tsx'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {

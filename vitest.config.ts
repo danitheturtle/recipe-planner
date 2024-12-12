@@ -15,7 +15,7 @@ export const makeTestConfig = ({ dirname }: { dirname: string }) => {
       cache: { dir: '../../node_modules/.vitest' },
       outputFile: '../../node_modules/.vitest/results.json',
       environment: 'jsdom',
-      include: [dirname + '/src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+      include: [dirname + '/src-js/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     },
   } as UserConfigExport;
 };
