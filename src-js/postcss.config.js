@@ -1,4 +1,4 @@
-export default (ctx) => ({
+export default {
   plugins: {
     'postcss-preset-env': {
       stage: 2,
@@ -12,5 +12,9 @@ export default (ctx) => ({
         'prefers-color-scheme-query': false,
       },
     },
+    tailwindcss: {
+      config: './src-js/tailwind.config.js'
+    },
+    autoprefixer: {},
   },
-});
+};

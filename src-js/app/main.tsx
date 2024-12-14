@@ -21,8 +21,10 @@ function App() {
   //Put providers and routing here
   return (
     <div>
-      <p>This is a test</p>
-      <button onClick={handleClick}>Tell Rust code about Craig</button>
+      <p className='p-10'>This is a test</p>
+      <button onClick={handleClick} className='bg-blue-300 rounded-lg p-2'>
+        Tell Rust code about Craig
+      </button>
     </div>
   );
 }

@@ -7,12 +7,12 @@
   "scripts": {
     "start": "yarn install && tauri dev",
     "build": "tauri build",
-    "dev": "vite --config ./src-js/.config/vite.config.ts --mode development",
-    "test": "vitest --config ./src-js/.config/vitest.config.ts watch",
+    "dev": "vite --config ./src-js/vite.config.ts --mode development",
+    "test": "vitest --config ./src-js/vitest.config.ts watch",
     "format": "yarn eslint --fix && yarn prettier --write",
-    "js:build": "yarn install && vite --config ./src-js/.config/vite.config.ts --emptyOutDir build",
-    "eslint": "eslint --config ./src-js/.config/eslint.config.js ./src-js/*",
-    "prettier": "prettier --config ./src-js/.config/.prettierrc.mjs ./src-js/*"
+    "js:build": "yarn install && vite --config ./src-js/vite.config.ts --emptyOutDir build",
+    "eslint": "eslint --config ./src-js/eslint.config.js --no-warn-ignored ./src-js/*",
+    "prettier": "prettier --config ./src-js/.prettierrc.mjs ./src-js/*"
   },
   "dependencies": {
     "react": "~19.0.0",
@@ -31,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "~8.18.0",
     "@typescript-eslint/parser": "~8.18.0",
     "@vitejs/plugin-react": "~4.3.4",
+    "autoprefixer": "^10.4.20",
     "eslint": "~9.16.0",
     "eslint-config-prettier": "~9.1.0",
     "eslint-plugin-import": "~2.31.0",
@@ -42,6 +43,7 @@
     "postcss": "~8.4.49",
     "postcss-preset-env": "~10.1.1",
     "prettier": "~3.4.2",
+    "tailwindcss": "^3.4.16",
     "typescript": "~5.7.2",
     "vite": "~6.0.3",
     "vite-tsconfig-paths": "^5.1.4",

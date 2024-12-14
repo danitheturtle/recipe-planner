@@ -21,7 +21,7 @@ export const makeConfig = ({
     },
     plugins: [react.default(), tsconfigPaths()],
     css: {
-      postcss: ".config/postcss.config.js"
+      postcss: './src-js/postcss.config.js'
     },
     // to access the Tauri environment variables set by the CLI with information about the current target
     envPrefix: [

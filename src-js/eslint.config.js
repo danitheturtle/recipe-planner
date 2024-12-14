@@ -12,6 +12,9 @@ import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
+  {
+    ignores: ['**/*.css', '**/*.html', '**/*.json'],
+  },
   eslintConfigPrettier,
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
