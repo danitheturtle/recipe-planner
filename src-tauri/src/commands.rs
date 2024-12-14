@@ -15,7 +15,9 @@ pub enum Distribution {
     Uniform { min: f64, max: f64 },
     Normal { mean: f64, std: f64, round: bool },
     Exponential { rate: f64, round: bool },
+    ChiSquared { degrees: f64, round: bool },
 }
+
 impl Distribution {
     /// NOTE: this does not check for NAN or INF yet.
     pub fn is_valid(&self) -> bool {
@@ -26,6 +28,7 @@ impl Distribution {
             Distribution::Uniform { min, max } => min <= max,
             Distribution::Normal { std, .. } => std > 0.0,
             Distribution::Exponential { rate, .. } => rate > 0.0,
+            Distribution::ChiSquared { degrees, .. } => degrees > 0.0,
         }
     }
 }
@@ -61,6 +64,14 @@ fn generate_assume_valid(rng: &mut AsconXofOutput, dist: Distribution) -> f64 {
         }
         Distribution::Exponential { rate, round } => {
             let d = rand_distr::Exp::new(rate).unwrap();
+            let mut r = d.sample(rng);
+            if round {
+                r = r.round()
+            }
+            r
+        }
+        Distribution::ChiSquared { degrees, round }  => {
+            let d = rand_distr::ChiSquared::new(degrees).unwrap();
             let mut r = d.sample(rng);
             if round {
                 r = r.round()
