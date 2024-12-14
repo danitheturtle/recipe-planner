@@ -2,7 +2,6 @@ import { StrictMode, useEffect } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { invoke } from '@tauri-apps/api/core';
 import { listen, Event } from '@tauri-apps/api/event';
-import { useState } from 'react';
 
 function App() {
   const handleClick = () => {

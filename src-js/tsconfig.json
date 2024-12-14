@@ -27,6 +27,5 @@
     "strict": true,
     "types": ["vite/client", "node"],
     "paths": {}
-  },
-  "exclude": ["node_modules"]
+  }
 }

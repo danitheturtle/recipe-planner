@@ -5,11 +5,14 @@
   "license": "none",
   "type": "module",
   "scripts": {
-    "start": "tauri dev",
-    "dev": "vite --mode development",
-    "test": "vitest watch",
-    "format": "eslint --config eslint.config.js --fix . && prettier --config .prettierrc.mjs --write .",
-    "build": "vite build"
+    "start": "yarn install && tauri dev",
+    "build": "tauri build",
+    "dev": "vite --config ./src-js/.config/vite.config.ts --mode development",
+    "test": "vitest --config ./src-js/.config/vitest.config.ts watch",
+    "format": "yarn eslint --fix && yarn prettier --write",
+    "js:build": "yarn install && vite --config ./src-js/.config/vite.config.ts --emptyOutDir build",
+    "eslint": "eslint --config ./src-js/.config/eslint.config.js ./src-js/*",
+    "prettier": "prettier --config ./src-js/.config/.prettierrc.mjs ./src-js/*"
   },
   "dependencies": {
     "react": "~19.0.0",

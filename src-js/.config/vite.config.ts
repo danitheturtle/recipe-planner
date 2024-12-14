@@ -10,10 +10,9 @@ export const makeConfig = ({
   mode: string | undefined;
 }): UserConfig => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') };
-
-  const { VITE_EXAMPLE_VAR: exampleVar = 'example default', VITE_UI_PORT: uiPort = '6060' } = process.env;
+  const { VITE_UI_PORT: uiPort = '6060' } = process.env;
   return {
-    cacheDir: './node_modules/.vite',
+    cacheDir: '../node_modules/.vite',
     root: dirname,
     clearScreen: false,
     server: {
@@ -21,6 +20,9 @@ export const makeConfig = ({
       strictPort: true,
     },
     plugins: [react.default(), tsconfigPaths()],
+    css: {
+      postcss: ".config/postcss.config.js"
+    },
     // to access the Tauri environment variables set by the CLI with information about the current target
     envPrefix: [
       'VITE_',
@@ -32,6 +34,7 @@ export const makeConfig = ({
       'TAURI_DEBUG',
     ],
     build: {
+      outDir: '../dist',
       // Tauri uses Chromium on Windows and WebKit on macOS and Linux
       target: process.env.TAURI_PLATFORM == 'windows' ? 'chrome105' : 'safari13',
       // don't minify for debug builds
@@ -41,4 +44,4 @@ export const makeConfig = ({
     },
   };
 };
-export default defineConfig(makeConfig({ dirname: './', mode: process.env.NODE_ENV }));
+export default defineConfig(makeConfig({ dirname: './src-js/', mode: process.env.NODE_ENV }));
