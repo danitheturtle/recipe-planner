@@ -70,10 +70,12 @@ impl AsconState {
 pub struct AsconXofAbsorb {
     s: AsconState,
 }
+
 #[derive(Clone)]
 pub struct AsconXofSqueeze {
     s: AsconState,
 }
+
 impl Default for AsconXofAbsorb {
     fn default() -> Self {
         Self {
@@ -87,6 +89,7 @@ impl Default for AsconXofAbsorb {
         }
     }
 }
+
 impl AsconXofAbsorb {
     pub fn new() -> Self {
         Self::default()
@@ -126,6 +129,7 @@ impl AsconXofAbsorb {
         AsconXofSqueeze { s: self.s }
     }
 }
+
 impl AsconXofSqueeze {
     pub fn new_from_input(input: &[u8]) -> Self {
         AsconXofAbsorb::new().write_all(input)
@@ -162,6 +166,7 @@ pub struct AsconXofOutput {
     carry: [u8; 8],
     carry_i: u32,
 }
+
 impl AsconXofInput {
     pub fn new() -> Self {
         Self::default()
@@ -192,6 +197,7 @@ impl AsconXofInput {
         }
     }
 }
+
 impl AsconXofOutput {
     pub fn new_from_squeeze(s: AsconXofSqueeze) -> Self {
         AsconXofOutput {
@@ -199,6 +205,9 @@ impl AsconXofOutput {
             carry: [0u8; 8],
             carry_i: 7,
         }
+    }
+    pub fn new_from_input(input: &[u8]) -> Self {
+        Self::new_from_squeeze(AsconXofSqueeze::new_from_input(input))
     }
     pub fn to_squeeze(self) -> AsconXofSqueeze {
         self.s
@@ -243,6 +252,6 @@ impl rand::RngCore for AsconXofOutput {
     }
 }
 
-pub fn ascon_hash(input: &[u8], output: &mut [u8]) {
-    AsconXofSqueeze::new_from_input(input).read_all(output);
-}
+// pub fn ascon_hash(input: &[u8], output: &mut [u8]) {
+//     AsconXofSqueeze::new_from_input(input).read_all(output);
+// }
