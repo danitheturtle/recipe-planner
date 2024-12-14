@@ -26,6 +26,8 @@
     "baseUrl": ".",
     "strict": true,
     "types": ["vite/client", "node"],
-    "paths": {}
+    "paths": {
+      "@/components/*": ["./app/components/*"]
+    }
   }
 }

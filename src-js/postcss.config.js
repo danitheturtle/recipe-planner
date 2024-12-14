@@ -12,9 +12,10 @@ export default {
         'prefers-color-scheme-query': false,
       },
     },
+    'postcss-input-range': {},
     tailwindcss: {
       config: './src-js/tailwind.config.js'
     },
-    autoprefixer: {},
+    autoprefixer: {}
   },
 };

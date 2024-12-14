@@ -5853,6 +5853,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-input-range@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "postcss-input-range@npm:6.0.0"
+  dependencies:
+    postcss-selector-parser: "npm:^7.0.0"
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: 10/9f95831776f33c21d9821541b78040eaf269eafc36e18f51b47587eb36698e29751489508d4c44f1839321b754e520c64a9e849ecf7de20f81c99805bbeb044e
+  languageName: node
+  linkType: hard
+
 "postcss-js@npm:^4.0.1":
   version: 4.0.1
   resolution: "postcss-js@npm:4.0.1"
@@ -6440,12 +6451,14 @@ __metadata:
     globals: "npm:^15.13.0"
     jsdom: "npm:~25.0.1"
     postcss: "npm:~8.4.49"
+    postcss-input-range: "npm:^6.0.0"
     postcss-preset-env: "npm:~10.1.1"
     prettier: "npm:~3.4.2"
     react: "npm:~19.0.0"
     react-dom: "npm:19.0.0"
     react-router: "npm:~7.0.2"
     tailwindcss: "npm:^3.4.16"
+    tslib: "npm:^2.8.1"
     typescript: "npm:~5.7.2"
     vite: "npm:~6.0.3"
     vite-tsconfig-paths: "npm:^5.1.4"
@@ -7292,6 +7305,13 @@ __metadata:
     minimist: "npm:^1.2.6"
     strip-bom: "npm:^3.0.0"
   checksum: 10/2041beaedc6c271fc3bedd12e0da0cc553e65d030d4ff26044b771fac5752d0460944c0b5e680f670c2868c95c664a256cec960ae528888db6ded83524e33a14
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.8.1":
+  version: 2.8.1
+  resolution: "tslib@npm:2.8.1"
+  checksum: 10/3e2e043d5c2316461cb54e5c7fe02c30ef6dccb3384717ca22ae5c6b5bc95232a6241df19c622d9c73b809bea33b187f6dbc73030963e29950c2141bc32a79f7
   languageName: node
   linkType: hard
 
