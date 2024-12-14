@@ -11,7 +11,7 @@ Generate random numbers with endless customization options
 - [node](https://nodejs.org/docs/latest/api/)
 - [yarn](https://yarnpkg.com/getting-started)
 - [vite](https://vite.dev/guide/)
-- [tauri](https://v1.tauri.app/v1/guides/getting-started/prerequisites)
+- [tauri](https://v2.tauri.app/)
 - [react](https://react.dev/)
 
 - other less important javascript bullshit [swc rust-based js compiler](https://swc.rs/), [eslint](https://eslint.org/docs/latest/), [postcss](https://postcss.org/), [prettier](https://prettier.io/docs/en/), [vitest](https://vitest.dev/api/)
