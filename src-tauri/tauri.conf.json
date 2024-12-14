@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "rng-customizer",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "pet.anarkitty.rngcustomizer",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:6060",
