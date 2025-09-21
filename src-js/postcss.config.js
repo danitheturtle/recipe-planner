@@ -13,9 +13,6 @@ export default {
       },
     },
     'postcss-input-range': {},
-    tailwindcss: {
-      config: './src-js/tailwind.config.js'
-    },
     autoprefixer: {}
   },
 };

@@ -1,12 +1,13 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "rng-customizer",
+  "identifier": "recipe.planner",
   "version": "0.1.0",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:6060",
-    "beforeDevCommand": "yarn dev",
-    "beforeBuildCommand": "yarn js:build"
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run js:build"
   },
   "app": {
     "windows": [

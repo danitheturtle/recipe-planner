@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv, UserConfig } from 'vite';
-import * as react from '@vitejs/plugin-react';
+import reactPlugin from '@vitejs/plugin-react-swc';
+import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export const makeConfig = ({
@@ -19,7 +20,7 @@ export const makeConfig = ({
       port: parseInt(uiPort ?? '6060'),
       strictPort: true,
     },
-    plugins: [react.default(), tsconfigPaths()],
+    plugins: [reactPlugin(), tsconfigPaths(), tailwindcss()],
     css: {
       postcss: './src-js/postcss.config.js'
     },

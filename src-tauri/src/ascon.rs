@@ -246,10 +246,6 @@ impl rand::RngCore for AsconXofOutput {
     fn fill_bytes(&mut self, dest: &mut [u8]) {
         self.read(dest);
     }
-
-    fn try_fill_bytes(&mut self, dest: &mut [u8]) -> Result<(), rand::Error> {
-        Ok(self.read(dest))
-    }
 }
 
 // pub fn ascon_hash(input: &[u8], output: &mut [u8]) {

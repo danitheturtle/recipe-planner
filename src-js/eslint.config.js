@@ -1,49 +1,48 @@
+import eslintConfig from '@eslint/js';
+import tslint from 'typescript-eslint';
 import globals from 'globals';
-//language parser
-import tsParser from '@typescript-eslint/parser';
 //Plugins
-import ts from '@typescript-eslint/eslint-plugin';
-import imprt from 'eslint-plugin-import';
-import react from 'eslint-plugin-react';
-import jsx from 'eslint-plugin-jsx-a11y';
-import hooks from 'eslint-plugin-react-hooks';
-//Configs
-import js from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+import nodePlugin from 'eslint-plugin-n';
+import reactPlugin from 'eslint-plugin-react';
+import hooksPlugin from 'eslint-plugin-react-hooks';
+import prettierPlugin from 'eslint-plugin-prettier/recommended';
 
 export default [
+  eslintConfig.configs.recommended,
+  reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
+  hooksPlugin.configs['recommended-latest'],
+  nodePlugin.configs['flat/recommended-script'],
+  importPlugin.flatConfigs.errors,
+  prettierPlugin,
   {
-    ignores: ['**/*.css', '**/*.html', '**/*.json'],
-  },
-  eslintConfigPrettier,
-  {
+    ignores: ['**/dist/**', '**/node_modules/**'],
     files: ['**/*.ts', '**/*.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
+    plugins: {
+      '@typescript-eslint': tslint.plugin,
+    },
     languageOptions: {
-      parser: tsParser,
+      parser: tslint.parser,
       parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        sourceType: 'module',
-        ecmaVersion: 'latest',
         projectService: true,
+        project: './tsconfig.json',
+        tsconfigRootDir: import.meta.dirname,
       },
       globals: {
         ...globals.browser,
-        ...globals.builtin,
         ...globals.node,
       },
     },
-    plugins: {
-      '@typescript-eslint': ts,
-      import: imprt,
-      react: react,
-      'jsx-a11y': jsx,
-      'react-hooks': hooks,
+    settings: {
+      'import/resolver': {
+        typescript: true,
+      },
+      react: {
+        version: 'detect',
+      },
     },
     rules: {
-      ...js.configs.recommended.rules,
-      ...eslintConfigPrettier.rules,
       //Custom rules here:
       '@typescript-eslint/no-explicit-any': 'warn',
       'no-debugger': 'warn',

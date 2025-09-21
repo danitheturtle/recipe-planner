@@ -9,7 +9,7 @@ mod commands;
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     let mut seed = [0u8; 32];
-    rand::rngs::OsRng.fill_bytes(&mut seed);
+    // rand::rngs::OsRng.fill_bytes(&mut seed);
     let rng = AsconXofOutput::new_from_input(&seed);
 
     tauri::Builder::default()
