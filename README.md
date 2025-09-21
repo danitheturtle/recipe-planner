@@ -19,6 +19,7 @@ Plan recipes
 **running it**
 - you need node version manager [nvm](https://github.com/nvm-sh/nvm) and [rust](https://doc.rust-lang.org/std/) installed.
 - `nvm install v22.19.0` then `nvm use v22.12.0`
+- `npm run update`
 - `npm start`
 
 In theory that should use the tauri CLI to install rust dependencies and start the application
