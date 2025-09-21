@@ -1,6 +1,6 @@
-# rng-customizer
+# recipe-planner
 
-Generate random numbers with endless customization options
+Plan recipes
 
 #### Installation and Running
 **external docs**
